@@ -1,0 +1,24 @@
+{
+    "name": "tab-tracker-express-app",
+    "version": "1.0.0",
+    "description": "Tab Tracker Backend",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon node ./src/app.js",
+        "lint": "eslint src/** --fix"
+    },
+    "repository": "https://github.com/anik-hossain/tab-tracker.git",
+    "author": "Anik Hossain",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^8.3.0",
+        "nodemon": "^2.0.15"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0"
+    }
+}
