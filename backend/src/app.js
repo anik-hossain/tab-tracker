@@ -11,9 +11,10 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // Routes
-app.get('/', (req, res) => {
+app.post('/register', (req, res) => {
     res.send({
-        message: 'Hello World',
+        message: 'Hello World, Register!',
+        ...req.body,
     });
 });
 
