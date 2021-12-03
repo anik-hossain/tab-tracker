@@ -7,7 +7,7 @@ module.exports = {
             res.status(201).json(user);
         } catch (errors) {
             res.status(400).json({
-                ...errors.errors,
+                error: 'Email already use',
             });
         }
     },

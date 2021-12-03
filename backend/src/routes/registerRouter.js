@@ -7,10 +7,11 @@
 
 const { Router } = require('express');
 const { registerController } = require('../controllers/RegisterController');
+const registerValidator = require('../validators/registerValidator');
 
 // Routing
 const router = Router();
 
-router.post('/', registerController);
+router.post('/', registerValidator, registerController);
 
 module.exports = router;
