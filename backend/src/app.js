@@ -14,9 +14,9 @@ const morgan = require('morgan');
 // Internal Dependencies
 const config = require('./config/config');
 const { sequelize } = require('./models/index');
+
 // Routers
-const login = require('./routes/loginRouter');
-const register = require('./routes/registerRouter');
+const authentication = require('./routes/authentication');
 
 const app = express();
 app.use(bodyParser.json());
@@ -24,8 +24,8 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // Routing
-app.use('/login', login);
-app.use('/register', register);
+app.use('/', authentication);
+app.use('/login', authentication);
 
 sequelize.sync().then(() => {
     app.listen(config.port, () => {
