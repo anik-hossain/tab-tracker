@@ -11,7 +11,10 @@
             <div class="pl-4 pr-4 pt-2 pb-2">
               <v-form>
                 <v-text-field label="Email" v-model="email"></v-text-field>
-                <v-text-field label="Email" v-model="password"></v-text-field>
+                <v-text-field
+                  label="Password"
+                  v-model="password"
+                ></v-text-field>
                 <div v-if="error">
                   <span class="err">{{ error }}</span>
                   <br />
