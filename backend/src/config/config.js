@@ -14,6 +14,8 @@ module.exports = {
         },
     },
     token: {
-        jwtSecret: process.env.JWT_SECRET || 'ac923kjckj2Iu0s',
+        jwtSecret:
+            process.env.JWT_SECRET ||
+            '8110b7458026c6234616d06c0894fc7c8d5e4c9446a9dc3ceeccb75f2b0a700f88babe6d2459276113db7560dff7968d8f',
     },
 };

@@ -21,7 +21,7 @@ const authentication = require('./routes/authentication');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Routing
 app.use('/', authentication);

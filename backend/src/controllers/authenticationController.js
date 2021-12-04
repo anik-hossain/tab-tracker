@@ -1,4 +1,11 @@
 const { User } = require('../models/index');
+const jwt = require('jsonwebtoken');
+const { token } = require('../config/config');
+
+function jwtSignUser(user) {
+    const ONE_WEEK = 60 * 60 * 24 * 7;
+    return jwt.sign(user, token.jwtSecret, { expiresIn: ONE_WEEK });
+}
 
 module.exports = {
     async registerController(req, res) {
@@ -26,8 +33,9 @@ module.exports = {
                     error: 'Email or password not match',
                 });
             }
-            res.json(user);
+            res.status(200).json({ user, token: jwtSignUser({ user }) });
         } catch (error) {
+            console.log(error);
             res.status(500).json({
                 error: 'Internal Server Error',
             });
