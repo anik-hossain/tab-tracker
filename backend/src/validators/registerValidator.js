@@ -2,8 +2,8 @@ const Joi = require('joi');
 
 const registerValidator = async (req, res, next) => {
     const schema = Joi.object({
-        email: Joi.string().email(),
-        password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{8,32}$')),
+        email: Joi.string().required().email(),
+        password: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]{8,32}$')),
     });
 
     try {
